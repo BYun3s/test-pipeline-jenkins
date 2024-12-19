@@ -1,10 +1,9 @@
 pipeline {
-    agent any
-
+    agent { docker { image 'python:3.14-rc-bookworm' } }
     stages {
-        stage('Test Stage') {
+        stage('build') {
             steps {
-                echo 'Test effectué : tout fonctionne correctement !'
+                sh 'python --version'
             }
         }
     }
